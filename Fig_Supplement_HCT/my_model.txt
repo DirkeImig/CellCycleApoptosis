@@ -1,0 +1,50 @@
+********** MODEL NAME                                            
+my_model                                                                 
+********** MODEL NOTES                                           
+                                                                 
+                                                                 
+********** MODEL STATES                                          
+d/dt(A) = R1                                                     
+d/dt(C) = R2                                                     
+A(0) = 0                                                         
+C(0) = 0                                                         
+                                                                 
+                                                                 
+********** MODEL PARAMETERS                                      
+m1   = 0.4                                                       
+p    = 0                                                         
+G    = 0.0001    
+g1  = 0.2                                                           
+g2  = 0.4                                                           
+PAD = 0.52                                                         
+p1 = 0.15                                                 
+                                                                 
+                                                                 
+********** MODEL VARIABLES                                       
+                                                          
+                                                                 
+                                                                 
+********** MODEL REACTIONS                                       
+R1 = m1 - p                                                      
+R2 = G                                                           
+                                                                 
+                                                                 
+********** MODEL FUNCTIONS                                       
+                                                                 
+                                                                 
+                                                                 
+********** MODEL EVENTS
+event = gt(C,1), A, max(A,0), G, g1, p, 0
+
+event = gt(C,0.39), G, g2
+event = gt(C,1.39), G, g2
+event = gt(C,2), G, g1
+
+event = gt(C,PAD), p, p1
+event = gt(C,1+PAD), p, p1
+
+                                                                 
+                                                                 
+                                                                 
+********** MODEL MATLAB FUNCTIONS                                
+                                                                 
